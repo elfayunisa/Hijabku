@@ -1,0 +1,631 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hijabku.com - Modest & Modern Fashion Boutique</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Navbar Start -->
+    <nav class="navbar">
+      <a href="#" class="navbar-logo">Hijabku<span>.com</span></a>
+
+      <div class="navbar-nav">
+        <a href="#home" class="active">Beranda</a>
+        <a href="#about">Tentang Kami</a>
+        <a href="#menu">Kategori</a>
+        <a href="#products">Koleksi</a>
+        <a href="#contact">Kontak</a>
+      </div>
+
+      <div class="navbar-extra">
+        <a href="#" id="search-button" aria-label="Cari"
+          ><i data-feather="search"></i
+        ></a>
+        <a href="#" id="shopping-cart-button" aria-label="Keranjang">
+          <i data-feather="shopping-bag"></i>
+          <!-- [PERUBAHAN 1]: Badge diawali dari 0 -->
+          <span class="cart-badge">0</span>
+        </a>
+        <a href="#" id="hamburger-menu" aria-label="Menu"
+          ><i data-feather="menu"></i
+        ></a>
+      </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Search Form Start -->
+    <div class="search-form">
+      <input
+        type="search"
+        id="search-box"
+        placeholder="Cari koleksi hijab..."
+      />
+      <label for="search-box"><i data-feather="search"></i></label>
+    </div>
+    <!-- Search Form End -->
+
+    <!-- Shopping Cart Start -->
+    <!-- [PERUBAHAN 2]: Shopping cart disiapkan dengan ID tempat penampung barang otomatis -->
+    <div class="shopping-cart">
+      <div id="cart-items-container">
+        <!-- Barang akan bertambah otomatis via JS di sini -->
+      </div>
+      <div class="cart-total">
+        <h3>Total: <span id="cart-total-price">Rp 0</span></h3>
+      </div>
+      <a
+        href="#"
+        id="checkout-wa-btn"
+        target="_blank"
+        class="btn-primary checkout-btn"
+        >Checkout via WhatsApp</a
+      >
+    </div>
+    <!-- Shopping Cart End -->
+
+    <!-- Hero Section Start -->
+    <section class="hero" id="home">
+      <div class="hero-container">
+        <div class="hero-content">
+          <span class="tagline">✦ Koleksi Eksklusif Terbaru</span>
+          <h1>
+            Anggun Dalam Kesederhanaan, <span>Nyaman Sepanjang Hari.</span>
+          </h1>
+          <p>
+            Didesain khusus untuk wanita aktif yang mendambakan tampilan hijab
+            syar'i, rapi, dan <em>ironless</em>.
+          </p>
+          <div class="hero-buttons">
+            <a href="#products" class="btn-primary">Jelajahi Koleksi</a>
+            <a href="#about" class="btn-secondary">Cerita Kami</a>
+          </div>
+        </div>
+        <div class="hero-image-wrapper">
+          <div class="image-card">
+            <img src="img/awal.jpg" alt="Model Hijabku.com" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- About Section Start -->
+    <section id="about" class="about">
+      <div class="section-header">
+        <h2><span>Tentang</span> Kami</h2>
+        <p>Kenali lebih dekat filosofi dan komitmen kami untuk kenyamananmu.</p>
+      </div>
+
+      <div class="row">
+        <div class="about-img">
+          <img src="img/awal.jpg" alt="Tentang Hijabku" />
+        </div>
+
+        <div class="content">
+          <h3>Apa yang membuat hijab kami berbeda?</h3>
+          <p>
+            Karena kamu butuh hijab yang bukan hanya nyaman, tapi juga mampu
+            mengikuti ritme harimu yang padat. Mulai dari meeting pagi, kuliah,
+            hingga aktivitas harian, hijab ini siap jadi andalan tanpa ribet.
+          </p>
+          <p>
+            Bahan ringan, adem, dan tegak di dahi membuatmu tetap rapi dan
+            percaya diri sepanjang hari tanpa khawatir gerah atau mudah kusut.
+          </p>
+          <div class="about-features">
+            <div class="feature-item">
+              <i data-feather="check-circle"></i>
+              <span>100% Premium Material</span>
+            </div>
+            <div class="feature-item">
+              <i data-feather="check-circle"></i>
+              <span>Ironless & Anti Kusut</span>
+            </div>
+            <div class="feature-item">
+              <i data-feather="check-circle"></i>
+              <span>Nyaman Seharian</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- About Section End -->
+
+    <!-- Menu Section Start (Kategori) -->
+    <section id="menu" class="menu">
+      <div class="section-header">
+        <h2><span>Kategori</span> Pilihan</h2>
+        <p>Pilih varian andalan kami yang siap melengkapi gaya harianmu.</p>
+      </div>
+
+      <!-- [PERUBAHAN 3]: Menambahkan tombol class="add-to-cart-btn" di setiap kartu kategori -->
+      <div class="menu-grid">
+        <div class="menu-card">
+          <div class="menu-card-img">
+            <img src="img/menu/1.jpg" alt="Bergo Maryam" />
+          </div>
+          <div class="menu-card-body">
+            <h3>Bergo Maryam</h3>
+            <p class="menu-card-price">Rp 32.000</p>
+            <button
+              class="add-to-cart-btn"
+              data-name="Bergo Maryam"
+              data-price="32000"
+              data-img="img/menu/1.jpg"
+            >
+              + Keranjang
+            </button>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-card-img">
+            <img src="img/menu/3.jpg" alt="Hijab Sport" />
+          </div>
+          <div class="menu-card-body">
+            <h3>Hijab Sport</h3>
+            <p class="menu-card-price">Rp 24.000</p>
+            <button
+              class="add-to-cart-btn"
+              data-name="Hijab Sport"
+              data-price="24000"
+              data-img="img/menu/3.jpg"
+            >
+              + Keranjang
+            </button>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-card-img">
+            <img src="img/menu/2.jpg" alt="Ironless Hijab" />
+          </div>
+          <div class="menu-card-body">
+            <h3>Ironless Hijab</h3>
+            <p class="menu-card-price">Rp 56.000</p>
+            <button
+              class="add-to-cart-btn"
+              data-name="Ironless Hijab"
+              data-price="56000"
+              data-img="img/menu/2.jpg"
+            >
+              + Keranjang
+            </button>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-card-img">
+            <img src="img/menu/4.jpg" alt="Hijab Motif" />
+          </div>
+          <div class="menu-card-body">
+            <h3>Hijab Motif</h3>
+            <p class="menu-card-price">Rp 68.000</p>
+            <button
+              class="add-to-cart-btn"
+              data-name="Hijab Motif"
+              data-price="68000"
+              data-img="img/menu/4.jpg"
+            >
+              + Keranjang
+            </button>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-card-img">
+            <img src="img/menu/5.jpg" alt="Paris Premium" />
+          </div>
+          <div class="menu-card-body">
+            <h3>Paris Premium</h3>
+            <p class="menu-card-price">Rp 25.000</p>
+            <button
+              class="add-to-cart-btn"
+              data-name="Paris Premium"
+              data-price="25000"
+              data-img="img/menu/5.jpg"
+            >
+              + Keranjang
+            </button>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-card-img">
+            <img src="img/menu/6.jpg" alt="Inner Instan" />
+          </div>
+          <div class="menu-card-body">
+            <h3>Inner Instan</h3>
+            <p class="menu-card-price">Rp 32.000</p>
+            <button
+              class="add-to-cart-btn"
+              data-name="Inner Instan"
+              data-price="32000"
+              data-img="img/menu/6.jpg"
+            >
+              + Keranjang
+            </button>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-card-img">
+            <img src="img/menu/7.jpg" alt="Pashmina Ceruty" />
+          </div>
+          <div class="menu-card-body">
+            <h3>Pashmina Ceruty</h3>
+            <p class="menu-card-price">Rp 21.000</p>
+            <button
+              class="add-to-cart-btn"
+              data-name="Pashmina Ceruty"
+              data-price="21000"
+              data-img="img/menu/7.jpg"
+            >
+              + Keranjang
+            </button>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-card-img">
+            <img src="img/menu/8.jpg" alt="Pashmina Silk" />
+          </div>
+          <div class="menu-card-body">
+            <h3>Pashmina Silk</h3>
+            <p class="menu-card-price">Rp 41.000</p>
+            <button
+              class="add-to-cart-btn"
+              data-name="Pashmina Silk"
+              data-price="41000"
+              data-img="img/menu/8.jpg"
+            >
+              + Keranjang
+            </button>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-card-img">
+            <img src="img/menu/9.jpg" alt="Pashmina Rayon" />
+          </div>
+          <div class="menu-card-body">
+            <h3>Pashmina Rayon</h3>
+            <p class="menu-card-price">Rp 49.000</p>
+            <button
+              class="add-to-cart-btn"
+              data-name="Pashmina Rayon"
+              data-price="49000"
+              data-img="img/menu/9.jpg"
+            >
+              + Keranjang
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Menu Section End -->
+
+    <!-- Products Section Start (Koleksi Unggulan) -->
+    <section id="products" class="products">
+      <div class="section-header">
+        <h2><span>Koleksi</span> Unggulan</h2>
+        <p>
+          Pilihan produk terfavorit dengan detail bahan eksklusif dan kualitas
+          terbaik.
+        </p>
+      </div>
+
+      <!-- [PERUBAHAN 4]: Menambahkan ikon tas belanja (add-to-cart-action) pada produk unggulan -->
+      <div class="products-grid">
+        <div class="product-card">
+          <span class="product-badge">Best Seller</span>
+          <div class="product-image">
+            <img src="img/products/1.webp" alt="Pashmina Viscose Shawl" />
+            <div class="product-actions">
+              <a
+                href="#modal-1"
+                class="item-detail-button"
+                aria-label="Lihat Detail"
+                ><i data-feather="eye"></i
+              ></a>
+              <a
+                href="#"
+                class="add-to-cart-action"
+                data-name="Pashmina Viscose Shawl"
+                data-price="83000"
+                data-img="img/products/1.webp"
+                aria-label="Tambah Keranjang"
+                ><i data-feather="shopping-bag"></i
+              ></a>
+            </div>
+          </div>
+          <div class="product-content">
+            <h3>Pashmina Viscose Shawl</h3>
+            <div class="product-stars">
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+            </div>
+            <div class="product-price">Rp 83.000 <span>Rp 95.000</span></div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <span class="product-badge">Terpopuler</span>
+          <div class="product-image">
+            <img src="img/products/2.jpg" alt="Hijab Motif Eksklusif" />
+            <div class="product-actions">
+              <a
+                href="#modal-2"
+                class="item-detail-button"
+                aria-label="Lihat Detail"
+                ><i data-feather="eye"></i
+              ></a>
+              <a
+                href="#"
+                class="add-to-cart-action"
+                data-name="Hijab Motif Eksklusif"
+                data-price="45000"
+                data-img="img/products/2.jpg"
+                aria-label="Tambah Keranjang"
+                ><i data-feather="shopping-bag"></i
+              ></a>
+            </div>
+          </div>
+          <div class="product-content">
+            <h3>Hijab Motif Eksklusif</h3>
+            <div class="product-stars">
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star"></i>
+            </div>
+            <div class="product-price">Rp 45.000 <span>Rp 55.000</span></div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <span class="product-badge">New Arrival</span>
+          <div class="product-image">
+            <img src="img/products/3.jpg" alt="Pashmina Viscose Printed" />
+            <div class="product-actions">
+              <a
+                href="#modal-3"
+                class="item-detail-button"
+                aria-label="Lihat Detail"
+                ><i data-feather="eye"></i
+              ></a>
+              <a
+                href="#"
+                class="add-to-cart-action"
+                data-name="Pashmina Viscose Printed"
+                data-price="120000"
+                data-img="img/products/3.jpg"
+                aria-label="Tambah Keranjang"
+                ><i data-feather="shopping-bag"></i
+              ></a>
+            </div>
+          </div>
+          <div class="product-content">
+            <h3>Pashmina Viscose Printed</h3>
+            <div class="product-stars">
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star"></i>
+            </div>
+            <div class="product-price">Rp 120.000 <span>Rp 135.000</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Products Section End -->
+
+    <!-- Modal Box Item Detail Start -->
+    <div class="modal" id="modal-1">
+      <div class="modal-container">
+        <a href="#" class="close-icon"><i data-feather="x"></i></a>
+        <div class="modal-content-grid">
+          <img src="img/products/1.webp" alt="Pashmina Viscose Shawl" />
+          <div class="modal-details">
+            <h3>Pashmina Viscose Shawl</h3>
+            <div class="product-stars">
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+            </div>
+            <div class="product-price">Rp 83.000</div>
+            <p>
+              Berbahan viscose yang ringan dan adem, shawl ini hadir dengan
+              warna kekinian. Gaya elegan effortless, sangat cocok dipadukan
+              dengan outfit apapun.
+            </p>
+            <a
+              href="https://wa.me/6283142320965?text=Halo%20Hijabku,%20saya%20tertarik%20pesan%20Pashmina%20Viscose%20Shawl"
+              target="_blank"
+              class="btn-primary"
+            >
+              <i data-feather="shopping-cart"></i> Pesan via WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="modal-2">
+      <div class="modal-container">
+        <a href="#" class="close-icon"><i data-feather="x"></i></a>
+        <div class="modal-content-grid">
+          <img src="img/products/2.jpg" alt="Hijab Motif" />
+          <div class="modal-details">
+            <h3>Hijab Motif Eksklusif</h3>
+            <div class="product-stars">
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star"></i>
+            </div>
+            <div class="product-price">Rp 45.000</div>
+            <p>
+              Hijab motif eksklusif dengan bahan premium yang halus, mudah
+              dibentuk, dan tegak di dahi sepanjang hari.
+            </p>
+            <a
+              href="https://wa.me/6283142320965?text=Halo%20Hijabku,%20saya%20tertarik%20pesan%20Hijab%20Motif"
+              target="_blank"
+              class="btn-primary"
+            >
+              <i data-feather="shopping-cart"></i> Pesan via WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="modal-3">
+      <div class="modal-container">
+        <a href="#" class="close-icon"><i data-feather="x"></i></a>
+        <div class="modal-content-grid">
+          <img src="img/products/3.jpg" alt="Pashmina Printed" />
+          <div class="modal-details">
+            <h3>Pashmina Viscose Printed</h3>
+            <div class="product-stars">
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star"></i>
+            </div>
+            <div class="product-price">Rp 120.000</div>
+            <p>
+              Sentuhan motif printed mewah di atas kain viscose super lembut.
+              Memberikan tampilan anggun tanpa mengorbankan kenyamanan.
+            </p>
+            <a
+              href="https://wa.me/6283142320965?text=Halo%20Hijabku,%20saya%20tertarik%20pesan%20Pashmina%20Viscose%20Printed"
+              target="_blank"
+              class="btn-primary"
+            >
+              <i data-feather="shopping-cart"></i> Pesan via WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal Box Item Detail End -->
+
+    <!-- Contact Section Start -->
+    <section id="contact" class="contact">
+      <div class="section-header">
+        <h2><span>Kontak</span> Kami</h2>
+        <p>
+          Punya pertanyaan atau ingin berkonsultasi? Tinggalkan pesanmu di sini.
+        </p>
+      </div>
+
+      <div class="contact-row">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.500269443293!2d115.46042807359362!3d-2.3368599976427338!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2de54f3d319c08b1%3A0x3622d05a73eee0c7!2sInstitut%20Teknologi%20Sapta%20Mandiri!5e0!3m2!1sid!2sid!4v1748446290544!5m2!1sid!2sid"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          class="map"
+        ></iframe>
+
+        <form id="contact-form" class="contact-form">
+          <div class="input-group">
+            <i data-feather="user"></i>
+            <input
+              type="text"
+              id="contact-name"
+              placeholder="Nama Lengkap"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <i data-feather="mail"></i>
+            <input
+              type="email"
+              id="contact-email"
+              placeholder="Alamat Email"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <i data-feather="phone"></i>
+            <input
+              type="tel"
+              id="contact-phone"
+              placeholder="Nomor WhatsApp / HP"
+              required
+            />
+          </div>
+          <div class="input-group textarea-group">
+            <i data-feather="message-square"></i>
+            <textarea
+              id="contact-message"
+              placeholder="Tuliskan pesan atau pertanyaanmu..."
+              rows="4"
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="btn-primary">
+            Kirim Pesan via WhatsApp
+          </button>
+        </form>
+      </div>
+    </section>
+    <!-- Contact Section End -->
+
+    <!-- Footer Start -->
+    <footer>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram"><i data-feather="instagram"></i></a>
+        <a href="#" aria-label="Twitter"><i data-feather="twitter"></i></a>
+        <a href="#" aria-label="Facebook"><i data-feather="facebook"></i></a>
+      </div>
+      <div class="footer-links">
+        <a href="#home">Beranda</a>
+        <a href="#about">Tentang Kami</a>
+        <a href="#menu">Kategori</a>
+        <a href="#products">Koleksi</a>
+        <a href="#contact">Kontak</a>
+      </div>
+      <div class="footer-credit">
+        <p>Created by <a href="#">Elfa Yunisa</a> | &copy; 2026 Hijabku.com</p>
+        <p class="payment-info">
+          Info Pembayaran / Layanan WhatsApp: <strong>083142320965</strong>
+        </p>
+      </div>
+    </footer>
+    <!-- Footer End -->
+
+    <!-- Feather Icons Init & Script -->
+    <script>
+      feather.replace();
+    </script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
